@@ -62,18 +62,18 @@ export function DatasetInput(): React.ReactElement {
 
   if (!selectedAlgorithm) {
     return (
-      <div className="bg-slate-800 rounded-lg p-6 border border-slate-700 opacity-50 pointer-events-none">
-        <p className="text-slate-400 text-sm">Select an algorithm first</p>
+      <div className="bg-gray-100 rounded-lg p-6 border border-gray-300 opacity-50 pointer-events-none">
+        <p className="text-gray-600 text-sm">Select an algorithm first</p>
       </div>
     );
   }
 
   return (
-    <div className="bg-slate-800 rounded-lg p-6 border border-slate-700 space-y-4">
+    <div className="bg-gray-50 rounded-lg p-6 border border-gray-300 space-y-4">
       <div>
         <label
           htmlFor="dataset-input"
-          className="block text-sm font-semibold text-slate-300 mb-2"
+          className="block text-sm font-semibold text-gray-800 mb-2"
         >
           Enter Dataset
         </label>
@@ -83,23 +83,23 @@ export function DatasetInput(): React.ReactElement {
           value={input}
           onChange={(e) => handleInputChange(e.target.value)}
           placeholder="e.g., 64, 34, 25, 12, 22, 11, 90"
-          className="w-full bg-slate-700 text-white border border-slate-600 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none h-24"
+          className="w-full bg-white text-gray-900 border-2 border-gray-400 rounded-md px-4 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:border-transparent resize-none h-24 focus:ring-offset-0"
         />
-        <p className="text-xs text-slate-400 mt-1">
+        <p className="text-xs text-gray-600 mt-1">
           Enter comma-separated integers. Max 100 elements.
         </p>
       </div>
 
-      <div className="flex gap-2">
+      <div className="flex gap-3">
         <button
           onClick={handleApply}
-          className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-slate-800"
+          className="flex-1 bg-gray-800 hover:bg-gray-900 text-white font-semibold py-3 px-4 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2"
         >
           Apply
         </button>
         <button
           onClick={handleGenerateRandom}
-          className="flex-1 bg-slate-700 hover:bg-slate-600 text-white font-semibold py-2 px-4 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-800"
+          className="flex-1 bg-gray-400 hover:bg-gray-500 text-white font-semibold py-3 px-4 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2"
         >
           Generate Random
         </button>
