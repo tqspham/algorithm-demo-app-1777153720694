@@ -35,13 +35,13 @@ export function AlgorithmVisualizer(): React.ReactElement {
   return (
     <div className="max-w-7xl mx-auto space-y-8">
       <div className="text-center mb-8">
-        <h1 className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+        <h1 className="text-4xl md:text-5xl font-semibold mb-2 text-gray-900">
           Algorithm Visualizer
         </h1>
-        <p className="text-slate-400">Step-by-step visualization with real-time statistics</p>
+        <p className="text-gray-600">Step-by-step visualization with real-time statistics</p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-1 space-y-6">
           <AlgorithmSelector />
           <DatasetInput />
@@ -52,7 +52,7 @@ export function AlgorithmVisualizer(): React.ReactElement {
           {!selectedAlgorithm ? (
             <EmptyState />
           ) : error ? (
-            <div className="bg-red-900/30 border border-red-500 rounded-lg p-4 text-red-200">
+            <div className="bg-gray-100 border border-gray-400 rounded-lg p-4 text-gray-900">
               <p className="font-semibold">Invalid Input</p>
               <p className="text-sm mt-1">{error}</p>
             </div>
