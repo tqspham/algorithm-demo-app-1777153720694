@@ -12,10 +12,10 @@ export function AlgorithmSelector(): React.ReactElement {
   };
 
   return (
-    <div className="bg-slate-800 rounded-lg p-6 border border-slate-700">
+    <div className="bg-gray-50 rounded-lg p-6 border border-gray-300">
       <label
         htmlFor="algorithm-select"
-        className="block text-sm font-semibold text-slate-300 mb-3"
+        className="block text-sm font-semibold text-gray-800 mb-3"
       >
         Select Algorithm
       </label>
@@ -24,7 +24,7 @@ export function AlgorithmSelector(): React.ReactElement {
         aria-label="Select an algorithm to visualize"
         value={selectedAlgorithm || ''}
         onChange={(e) => handleChange(e.target.value)}
-        className="w-full bg-slate-700 text-white border border-slate-600 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        className="w-full bg-white text-gray-900 border border-gray-400 rounded-md px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-gray-700 focus:border-transparent"
       >
         <option value="">Choose an algorithm...</option>
         {ALGORITHMS.map((algo) => (
