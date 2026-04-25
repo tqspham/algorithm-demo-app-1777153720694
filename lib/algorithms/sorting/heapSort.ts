@@ -14,7 +14,7 @@ interface ExecutionResult {
   };
 }
 
-context: {
+interface HeapSortContext {
   steps: ExecutionResult['steps'];
   comparisons: number;
   swaps: number;
@@ -26,7 +26,7 @@ function heapify(
   arr: number[],
   n: number,
   i: number,
-  context: any
+  context: HeapSortContext
 ): void {
   let largest = i;
   const left = 2 * i + 1;
@@ -70,7 +70,7 @@ function heapify(
 
 export function heapSort(data: number[]): ExecutionResult {
   const arr = [...data];
-  const context = {
+  const context: HeapSortContext = {
     steps: [] as ExecutionResult['steps'],
     comparisons: 0,
     swaps: 0,
