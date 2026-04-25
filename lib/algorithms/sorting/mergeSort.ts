@@ -14,7 +14,7 @@ interface ExecutionResult {
   };
 }
 
-context: {
+interface MergeSortContext {
   steps: ExecutionResult['steps'];
   comparisons: number;
   swaps: number;
@@ -27,7 +27,7 @@ function merge(
   left: number,
   mid: number,
   right: number,
-  context: any
+  context: MergeSortContext
 ): void {
   const leftArr = arr.slice(left, mid + 1);
   const rightArr = arr.slice(mid + 1, right + 1);
@@ -77,7 +77,7 @@ function mergeSortHelper(
   arr: number[],
   left: number,
   right: number,
-  context: any
+  context: MergeSortContext
 ): void {
   if (left < right) {
     const mid = Math.floor((left + right) / 2);
@@ -89,7 +89,7 @@ function mergeSortHelper(
 
 export function mergeSort(data: number[]): ExecutionResult {
   const arr = [...data];
-  const context = {
+  const context: MergeSortContext = {
     steps: [] as ExecutionResult['steps'],
     comparisons: 0,
     swaps: 0,
