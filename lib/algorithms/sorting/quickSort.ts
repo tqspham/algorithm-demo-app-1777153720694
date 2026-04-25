@@ -14,7 +14,7 @@ interface ExecutionResult {
   };
 }
 
-context: {
+interface QuickSortContext {
   steps: ExecutionResult['steps'];
   arr: number[];
   comparisons: number;
@@ -27,7 +27,7 @@ function partition(
   arr: number[],
   low: number,
   high: number,
-  context: any
+  context: QuickSortContext
 ): number {
   const pivot = arr[high];
   let i = low - 1;
@@ -78,7 +78,7 @@ function quickSortHelper(
   arr: number[],
   low: number,
   high: number,
-  context: any
+  context: QuickSortContext
 ): void {
   if (low < high) {
     const pi = partition(arr, low, high, context);
@@ -89,7 +89,7 @@ function quickSortHelper(
 
 export function quickSort(data: number[]): ExecutionResult {
   const arr = [...data];
-  const context = {
+  const context: QuickSortContext = {
     steps: [] as ExecutionResult['steps'],
     arr,
     comparisons: 0,
