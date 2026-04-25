@@ -14,7 +14,7 @@ interface ExecutionResult {
   };
 }
 
-context: {
+interface DfsContext {
   steps: ExecutionResult['steps'];
   visited: Set<number>;
   comparisons: number;
@@ -24,7 +24,7 @@ context: {
 function dfsHelper(
   node: number,
   graph: Map<number, number[]>,
-  context: any,
+  context: DfsContext,
   visitedOrder: number[]
 ): void {
   context.visited.add(node);
@@ -64,7 +64,7 @@ export function dfs(data: number[]): ExecutionResult {
     graph.set(from, neighbors);
   }
 
-  const context = {
+  const context: DfsContext = {
     steps: [] as ExecutionResult['steps'],
     visited: new Set<number>(),
     comparisons: 0,
