@@ -1,100 +1,111 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-/* Neutral color palette */
 :root {
-  --color-white: #ffffff;
-  --color-bg-light: #f9f9f9;
-  --color-bg-lighter: #f5f5f5;
-  --color-gray-light: #e8e8e8;
-  --color-gray-medium: #d1d1d1;
-  --color-gray: #999999;
-  --color-gray-dark: #666666;
-  --color-gray-darker: #333333;
-  --color-black: #000000;
+  --color-primary: #0066cc;
+  --color-primary-dark: #0052a3;
+  --color-primary-light: #e6f0ff;
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #eeeeee;
+  --color-neutral-300: #e0e0e0;
+  --color-neutral-400: #bdbdbd;
+  --color-neutral-500: #9e9e9e;
+  --color-neutral-600: #757575;
+  --color-neutral-700: #616161;
+  --color-neutral-800: #424242;
+  --color-neutral-900: #212121;
 }
 
-/* Typography improvements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-size: 15px;
-  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--color-neutral-900);
+  background-color: var(--color-neutral-50);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
 }
 
 h1 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  line-height: 1.2;
+  font-size: 2rem;
 }
 
 h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.3;
+  font-size: 1.5rem;
 }
 
 h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.4;
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1.125rem;
 }
 
 p {
-  line-height: 1.6;
+  color: var(--color-neutral-700);
 }
 
-/* Focus states for accessibility */
-button:focus,
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 2px solid var(--color-gray-dark);
-  outline-offset: 2px;
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
 }
 
-/* Flat button base styles */
+a:hover {
+  color: var(--color-primary-dark);
+}
+
 button {
-  border-radius: 6px;
-  border: none;
-  font-weight: 500;
-  transition: background-color 150ms, color 150ms;
+  font-family: inherit;
   cursor: pointer;
 }
 
-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
 }
 
-/* Form input focus indicator */
-input[type="text"],
-input[type="number"],
-input[type="range"],
-select,
-textarea {
-  transition: border-color 150ms, background-color 150ms;
+/* Utility classes */
+.transition-all {
+  transition: all 0.2s ease-in-out;
 }
 
-input[type="range"] {
-  accent-color: var(--color-gray-dark);
+.transition-colors {
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
 }
 
-/* Remove default focus rings and add custom ones */
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid var(--color-gray-dark);
+.focus-ring {
+  outline: 2px solid transparent;
   outline-offset: 2px;
+  transition: outline 0.2s ease-in-out;
 }
 
-/* Spinner animation - subtle, under 200ms */
-@keyframes spin-subtle {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin-subtle {
-  animation: spin-subtle 1s linear infinite;
+.focus-ring:focus {
+  outline-color: var(--color-primary);
 }
