@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '@/components/ui/Layout';
-import Card, { CardContent, CardHeader } from '@/components/ui/Card';
+import { Card, CardContent, CardHeader } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 
 const HomePage: React.FC = () => {
